@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
-    int teste;
-
     // Start is called before the first frame update
     void Start()
     {
-        teste += 1;
+        for (int i = 0; i < 10; i++)
+        {
+            Debug.Log("Teste");
+        }
     }
 
     // Update is called once per frame
