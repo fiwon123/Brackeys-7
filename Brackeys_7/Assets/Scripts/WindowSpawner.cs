@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class WindowSpawner : MonoBehaviour
 {
 
-    [Header("Setup")]
+    [Foldout("Setup", true)]
     [SerializeField]
     private GameObject windowPrefab = default;
     [SerializeField]
@@ -17,16 +17,15 @@ public class WindowSpawner : MonoBehaviour
     [SerializeField]
     private int screenHeight = 720;
 
-    [Foldout("Configs", true)]
+    [Foldout("Data Windows", true)]
     [SerializeField]
-    private Vector2[] sizeGenerator = default;
-    [SerializeField]
-    private Sprite[] backgroundGenerator = default;
+    private SpawnData[] datas = default;
+
+    [Foldout("Spawn Position Limit", true)]
     [SerializeField]
     private RangedFloat rangeSpawnX = default;
     [SerializeField]
     private RangedFloat rangeSpawnY = default;
-
 
     [ButtonMethod]
     public void ClearWindows()
@@ -43,27 +42,30 @@ public class WindowSpawner : MonoBehaviour
         // Instantiate new Window
         GameObject newWindow = Instantiate(windowPrefab, Vector2.zero, Quaternion.identity, canvas);
 
+        // Generate a data
+        int indexRnd = Random.Range(0, datas.Length);
+        SpawnData dataRnd = datas[indexRnd];
+
         // Generate Background
-        newWindow.GetComponent<Image>().sprite = GenerateBackground();
+        newWindow.GetComponent<Image>().sprite = GenerateBackground(dataRnd);
 
         // Generate new Size;
-        Vector2 newSize = GenerateSize();
-        SetNewSize(ref newWindow, ref newSize);
+        SetNewSize(ref newWindow, ref dataRnd.size);
 
         // Generate Pos
-        newWindow.transform.position = GeneratePos(ref newSize);
+        newWindow.transform.position = GeneratePos(ref dataRnd.size);
         
     }
 
-    private Sprite GenerateBackground()
+    private Sprite GenerateBackground(SpawnData data)
     {
-        if (backgroundGenerator.Length == 0)
+        if (data.backgroundGenerator.Length == 0)
         {
             return null;
         }
 
-        int indexRnd = Random.Range(0, backgroundGenerator.Length);
-        Sprite newBackground = backgroundGenerator[indexRnd];
+        int indexRnd = Random.Range(0, data.backgroundGenerator.Length);
+        Sprite newBackground = data.backgroundGenerator[indexRnd];
 
         return newBackground;
     }
@@ -73,19 +75,6 @@ public class WindowSpawner : MonoBehaviour
         RectTransform rectTransform = newWindow.GetComponent<RectTransform>();
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, newSize.x);
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, newSize.y);
-    }
-
-    private Vector2 GenerateSize()
-    {
-        if (sizeGenerator.Length == 0)
-        {
-            return Vector2.zero;
-        }
-
-        int indexRnd = Random.Range(0, sizeGenerator.Length);
-        Vector2 newSize = sizeGenerator[indexRnd];
-
-        return newSize;
     }
 
     private Vector3 GeneratePos(ref Vector2 newSize)

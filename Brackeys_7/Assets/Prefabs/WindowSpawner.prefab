@@ -116,10 +116,13 @@ MonoBehaviour:
   canvas: {fileID: 4728127354776036875}
   screenWidth: 1280
   screenHeight: 720
-  sizeGenerator:
-  - {x: 100, y: 100}
-  - {x: 200, y: 200}
-  backgroundGenerator: []
+  datas:
+  - {fileID: 11400000, guid: b7ae2b212e673c0419c473fe89b7b0e2, type: 2}
+  - {fileID: 11400000, guid: 0057cf5d2d82c8d4bb7e82cd5081ec5c, type: 2}
+  - {fileID: 11400000, guid: abd3f0e1708fb0c428207ec6528c720d, type: 2}
+  - {fileID: 11400000, guid: 9d13e8d880a6be34a939cc8f437b0379, type: 2}
+  - {fileID: 11400000, guid: a6f3c939df413d840a52b99776f8161b, type: 2}
+  - {fileID: 11400000, guid: 503647ef6b50512468df15dbb276b899, type: 2}
   rangeSpawnX:
     Min: 0
     Max: 1280
