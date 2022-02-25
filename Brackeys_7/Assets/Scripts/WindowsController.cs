@@ -5,42 +5,43 @@ using UnityEngine.UI;
 
 public class WindowsController : MonoBehaviour
 {
-    //GameObject windowsAdd;
+    
     [Header("Images")]
     [SerializeField]
     public Sprite[] closeImages;
-    public Button closeButton;
     public int stage;
+    public Button closeButton;
+    public GameObject windowsAdd;
 
     public void Start(){
-        //windowsAdd = this.gameObject;
-        //randomizeImage(closeButton, closeImages);
+        //windowsAdd = gameObject.GetComponent<Transform>().parent.gameObject;
+        randomizeImage();
 
         if(stage > 1){
-            //randomizePlace();
+            randomizePlace();
         }
-        Debug.Log("Iniciei direito");
-    }
-    public void rightClick(){
-        Debug.Log("Entrei no 'rightClick'");
-        Destroy(this);
     }
 
-    private void randomizeImage(Button closeButton, Sprite[] closeImages){
+
+    private void randomizeImage(){
         int i=0, total = closeImages.Length;
         i = (int)Random.Range(i, total);
         closeButton.GetComponent<Image>().sprite = closeImages[i];
     }
 
-    /*
+    
     private void randomizePlace(){
         RectTransform rt = (RectTransform)windowsAdd.transform;
         float width = rt.rect.width;
         float height = rt.rect.height;
         
-        closeButton.GetComponent<RectTransform>().anchoredPosition = new Vector2 (Random.Range(0, width), Random.Range(0, height));
+        this.GetComponent<Transform>().position = new Vector2 (Random.Range(0, width), Random.Range(0, height));
 
-        //windows.GetComponentInChildren<Button>.anchoredPosition;
+        //windowsAdd.GetComponentInChildren<Button>.anchoredPosition;
+    }
 
-    }*/
+    public void OnMouseDown(){
+        //Debug.Log("Sprite Clicked");
+        Destroy(windowsAdd);
+    }
 }
