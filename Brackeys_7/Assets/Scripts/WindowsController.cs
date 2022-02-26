@@ -17,22 +17,22 @@ public class WindowsController : MonoBehaviour
 
     public void Start(){
         //windowsAdd = gameObject.GetComponent<Transform>().parent.gameObject;
-        randomizeImage();
+        RandomizeImage();
 
         if(needRandom){
-            randomizePlace();
+            RandomizePlace();
         }
     }
 
 
-    private void randomizeImage(){
+    private void RandomizeImage(){
         int i=0, total = closeImages.Length;
         i = (int)Random.Range(i, total);
         closeButton.GetComponent<Image>().sprite = closeImages[i];
     }
 
     
-    private void randomizePlace(){
+    private void RandomizePlace(){
         RectTransform rt = (RectTransform)windowsAdd.transform;
         float width = rt.rect.width;
         float height = rt.rect.height;
@@ -45,7 +45,7 @@ public class WindowsController : MonoBehaviour
         //windowsAdd.GetComponentInChildren<Button>.anchoredPosition;
     }   
 
-    public void OnMouseDown(){
+    public void ClickRight(){
         //Debug.Log("Sprite Clicked");
         Destroy(windowsAdd);
     }
