@@ -221,7 +221,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 35837005248841221}
         m_TargetAssemblyTypeName: WindowsController, Assembly-CSharp
-        m_MethodName: OnMouseDown
+        m_MethodName: ClickRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
