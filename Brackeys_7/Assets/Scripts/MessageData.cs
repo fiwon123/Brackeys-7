@@ -29,6 +29,6 @@ public class MessageData : ScriptableObject
     [ButtonMethod]
     public void AddLinkInLastMessage()
     {
-        messages[messages.Length - 1].value += "<color=\"blue\"><link=\"ID\"> my link </link>";
+        messages[messages.Length - 1].value += "<color=\"yellow\"><link=\"ID\"> Link </link>";
     }
 }

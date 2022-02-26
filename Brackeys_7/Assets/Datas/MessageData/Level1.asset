@@ -17,33 +17,15 @@ MonoBehaviour:
   messages:
   - talking: 1
     attachment: {fileID: 0}
-    value: "Ol\xE1, como vai voc\xEA?"
+    value: Hello, how are you?
   - talking: 0
     attachment: {fileID: 0}
-    value: Tudo bem
+    value: I'm fine.
   - talking: 1
     attachment: {fileID: 0}
-    value: 
-  - talking: 0
-    attachment: {fileID: 0}
-    value: 
+    value: 'Here is the link:'
   - talking: 1
     attachment: {fileID: 0}
-    value: <color="blue"><link="ID"> my link </link>
-  - talking: 1
-    attachment: {fileID: 0}
-    value: <color="blue"><link="ID"> my link </link>
-  - talking: 1
-    attachment: {fileID: 0}
-    value: <color="blue"><link="ID"> my link </link>
-  - talking: 1
-    attachment: {fileID: 0}
-    value: <color="blue"><link="ID"> my link </link>
-  - talking: 1
-    attachment: {fileID: 0}
-    value: <color="blue"><link="ID"> my link </link>
-  - talking: 1
-    attachment: {fileID: 0}
-    value: <color="blue"><link="ID"> my link </link>
-  nextIndexTab: 0
+    value: <color="yellow"><link="ID"> Link </link>
+  nextIndexTab: 1
   level: 1

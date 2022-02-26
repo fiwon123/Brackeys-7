@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentShape: 0
   currentSize: 1
-  size: {x: 100, y: 100}
+  size: {x: 200, y: 200}
   backgroundGenerator: []

@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 8
+    m_Right: 8
+    m_Top: 12
+    m_Bottom: 12
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0.20947094, b: 0.38679248, a: 0.49019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -360,13 +360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07d25dd4aa3e5542a7a24bc7e1bd2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 62deff0aae6531845b750b0b5406ba17, type: 2}
   scrollBar: {fileID: 672240958710525046}
   viewerPort: {fileID: 672240959948663889}
-  data: {fileID: 0}
   panelMessagePrefab: {fileID: 475465532679153554, guid: 58379216d010ed045998db3a1fc27565, type: 3}
   content: {fileID: 672240958801826937}
-  photoYou: {fileID: 21300000, guid: 6194546eb72bc1849accc2a5b76c73d3, type: 3}
-  photoOther: {fileID: 21300000, guid: 1ac673c028b3fbc4eb3bdf6fb8bd23e7, type: 3}
 --- !u!1 &672240959948663889
 GameObject:
   m_ObjectHideFlags: 0
