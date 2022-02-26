@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class WindowSpawner : MonoBehaviour
 {
-
     [Foldout("Setup", true)]
     [SerializeField]
     private GameObject windowPrefab = default;
@@ -20,12 +19,55 @@ public class WindowSpawner : MonoBehaviour
     [Foldout("Data Windows", true)]
     [SerializeField]
     private SpawnData[] datas = default;
+    [SerializeField]
+    private LevelData levelData = default;
 
     [Foldout("Spawn Position Limit", true)]
     [SerializeField]
     private RangedFloat rangeSpawnX = default;
     [SerializeField]
     private RangedFloat rangeSpawnY = default;
+
+    public static WindowSpawner Instance;
+
+    public void SetLevelData(LevelData value)
+    {
+        levelData = value;
+    }
+
+    public void StartSpawn()
+    {
+        ClearWindows();
+
+        for (int i = 0; i < levelData.initialCountWindows; i++)
+        {
+            SpawnWindow();
+        }
+
+        StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
+        StartCoroutine(CountDownCoroutine(levelData.timeFinish));
+    }
+
+    public void FinishSpawn()
+    {
+        StopAllCoroutines();
+    }
+
+    private IEnumerator CountDownCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        GameManager.Instance.LosePuzzle();
+        FinishSpawn();
+    }
+
+    private IEnumerator SpawnWindowCoroutine(RangedFloat time)
+    {
+        while (GameManager.Instance.isPuzzleStarted) {
+            yield return new WaitForSeconds(Random.Range(time.Min, time.Max));
+            SpawnWindow();
+        }
+    }
 
     [ButtonMethod]
     public void ClearWindows()

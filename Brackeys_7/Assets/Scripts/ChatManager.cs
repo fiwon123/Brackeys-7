@@ -11,6 +11,8 @@ public class ChatManager : MonoBehaviour
     [SerializeField]
     private MessageData data;
     private int indexMessage;
+    [SerializeField]
+    private float intervalMessage = 1.5f;
 
     [Foldout("Setup", true)]
     [SerializeField]
@@ -23,7 +25,25 @@ public class ChatManager : MonoBehaviour
     [SerializeField]
     private Transform content;
 
+    public Coroutine coroutineStartChat;
+
     public static ChatManager Instance;
+
+    private void OnEnable()
+    {
+        if (coroutineStartChat == null)
+        {
+            coroutineStartChat = StartCoroutine(StartChatCoroutine());
+        }
+    }
+
+    private IEnumerator StartChatCoroutine()
+    {
+        while (indexMessage <= data.messages.Length) {
+            yield return new WaitForSeconds(intervalMessage);
+            NextMessage();
+        }
+    }
 
     private void Start()
     {
@@ -50,11 +70,18 @@ public class ChatManager : MonoBehaviour
         viewerPort.SetActive(false);
     }
 
+    public void SetData(MessageData data)
+    {
+        this.data = data;
+        indexMessage = 0;
+    }
+
     [ButtonMethod]
     public void NextMessage()
     {
         if (indexMessage >= data.messages.Length)
         {
+            coroutineStartChat = null;
             return;
         }
 
