@@ -1,6 +1,7 @@
 using MyBox;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,9 @@ public class WindowSpawner : MonoBehaviour
 
     public Transform successButton;
 
+    public TextMeshProUGUI textTime;
+    public float currentTime;
+
     public static WindowSpawner Instance;
 
     private void Awake()
@@ -37,6 +41,13 @@ public class WindowSpawner : MonoBehaviour
     {
         ConfigureRect();
         
+    }
+
+    private void Update()
+    {
+        currentTime -= Time.deltaTime;
+        currentTime = Mathf.Clamp(currentTime, 0f, float.MaxValue);
+        textTime.text = "Time:" + currentTime.ToString("0");
     }
 
     private void ConfigureRect()
@@ -97,6 +108,8 @@ public class WindowSpawner : MonoBehaviour
 
         StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
         StartCoroutine(CountDownCoroutine(levelData.timeFinish));
+
+        currentTime = levelData.timeFinish;
     }
 
     public void FinishSpawn()

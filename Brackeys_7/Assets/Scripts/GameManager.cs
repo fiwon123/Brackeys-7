@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     public void LosePuzzle()
     {
         isPuzzleStarted = false;
+        RestartPuzzle();
     }
 
 }
