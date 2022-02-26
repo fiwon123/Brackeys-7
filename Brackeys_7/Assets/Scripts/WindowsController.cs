@@ -32,7 +32,7 @@ public class WindowsController : MonoBehaviour
     }
 
     
-    private void RandomizePlace(){
+    public void RandomizePlace(){
         RectTransform rt = (RectTransform)windowsAdd.transform;
         float width = rt.rect.width;
         float height = rt.rect.height;

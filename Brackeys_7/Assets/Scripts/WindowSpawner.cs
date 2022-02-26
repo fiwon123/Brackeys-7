@@ -123,6 +123,11 @@ public class WindowSpawner : MonoBehaviour
         // Generate Background
         newWindow.GetComponent<WindowsController>().background.sprite = GenerateBackground(dataRnd);
 
+        if (levelData.randomizeCloseButton)
+        {
+            newWindow.GetComponent<WindowsController>().RandomizePlace();
+        }
+
         // Generate new Size;
         SetNewSize(ref newWindow, ref dataRnd.size);
 
