@@ -24,6 +24,10 @@ public class WindowsController : MonoBehaviour
         }
     }
 
+    public void SpawnNewPopup()
+    {
+        WindowSpawner.Instance.SpawnWindow();
+    }
 
     private void RandomizeImage(){
         int i=0, total = closeImages.Length;
@@ -43,7 +47,21 @@ public class WindowsController : MonoBehaviour
         Debug.Log("tamanho atual é :" + closeButton.GetComponent<Transform>().position);
 
         //windowsAdd.GetComponentInChildren<Button>.anchoredPosition;
-    }   
+    }
+
+    public void SetClosePositionInRightCorner()
+    {
+        RectTransform rt = (RectTransform)windowsAdd.transform;
+        float width = rt.rect.width;
+        float height = rt.rect.height;
+
+        Debug.Log("essa é a altura: " + height + "\nEssa é a largura: " + width);
+
+        closeButton.GetComponent<Transform>().localPosition = new Vector2(rt.rect.width - 10, rt.rect.height - 10);
+        Debug.Log("tamanho atual é :" + closeButton.GetComponent<Transform>().position);
+
+        //windowsAdd.GetComponentInChildren<Button>.anchoredPosition;
+    }
 
     public void ClickRight(){
         //Debug.Log("Sprite Clicked");
