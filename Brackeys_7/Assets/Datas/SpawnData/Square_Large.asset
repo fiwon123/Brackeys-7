@@ -15,4 +15,5 @@ MonoBehaviour:
   currentShape: 0
   currentSize: 2
   size: {x: 250, y: 250}
-  backgroundGenerator: []
+  backgroundGenerator:
+  - {fileID: 21300000, guid: 179f3b7e05f6cbc488255ad5b1fcb6e9, type: 3}

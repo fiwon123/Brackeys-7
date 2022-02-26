@@ -121,7 +121,7 @@ public class WindowSpawner : MonoBehaviour
         SpawnData dataRnd = datas[indexRnd];
 
         // Generate Background
-        newWindow.GetComponent<Image>().sprite = GenerateBackground(dataRnd);
+        newWindow.GetComponent<WindowsController>().background.sprite = GenerateBackground(dataRnd);
 
         // Generate new Size;
         SetNewSize(ref newWindow, ref dataRnd.size);

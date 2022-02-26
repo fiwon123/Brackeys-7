@@ -13,6 +13,8 @@ public class WindowsController : MonoBehaviour
     public Button closeButton;
     public GameObject windowsAdd;
 
+    public Image background;
+
     public void Start(){
         //windowsAdd = gameObject.GetComponent<Transform>().parent.gameObject;
         randomizeImage();
