@@ -1,4 +1,5 @@
 using MyBox;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,46 +7,53 @@ using UnityEngine.UI;
 
 public class ChatManager : MonoBehaviour
 {
+    [Foldout("Data", true)]
+    [SerializeField]
+    private MessageData data;
+    private int indexMessage;
+
+    [Foldout("Setup", true)]
     [SerializeField]
     private Scrollbar scrollBar;
-
     [SerializeField]
-    private Message[] messages;
-    private int indexMessage;
+    private GameObject viewerPort;
 
     [SerializeField]
     private GameObject panelMessagePrefab;
     [SerializeField]
     private Transform content;
 
-    public Sprite photoYou;
-    public Sprite photoOther;
-
-    public enum who { YOU, OTHER }
-
-    [System.Serializable]
-    struct Message
-    {
-        public who talking;
-        public Sprite attachment;
-        public string value;
-    }
+    public static ChatManager Instance;
 
     private void Start()
     {
-        indexMessage = 0;
+        Instance = this;
     }
 
-    [ButtonMethod]
-    public void AddLinkInLastMessage()
+    public int GetNextIndexTab()
     {
-        messages[messages.Length-1].value += "<color=\"blue\"><link=\"ID\"> my link </link>";
+        return data.nextIndexTab;
+    }
+
+    private void Update()
+    {
+        scrollBar.value = 0;
+    }
+
+    public void EnableViewerPort()
+    {
+        viewerPort.SetActive(true);
+    }
+
+    public void DisableViewerPort()
+    {
+        viewerPort.SetActive(false);
     }
 
     [ButtonMethod]
     public void NextMessage()
     {
-        if (indexMessage >= messages.Length)
+        if (indexMessage >= data.messages.Length)
         {
             return;
         }
@@ -53,29 +61,27 @@ public class ChatManager : MonoBehaviour
         GameObject panelMessage = Instantiate(panelMessagePrefab, content);
         MessagePanel messsagePanel = panelMessage.GetComponent<MessagePanel>();
 
-        if (messages[indexMessage].attachment != null)
+        if (data.messages[indexMessage].attachment != null)
         {
-            messsagePanel.SetAttachment(messages[indexMessage].attachment);
+            messsagePanel.SetAttachment(data.messages[indexMessage].attachment);
         }
         else
         {
             messsagePanel.SetAttachment(null);
         }
 
-        if (messages[indexMessage].talking == who.YOU)
+        if (data.messages[indexMessage].talking == MessageData.who.YOU)
         {
-            messsagePanel.SetPhoto(photoYou);
+            messsagePanel.SetPhoto(data.photoYou);
             messsagePanel.ChangeLayoutToRight();
         }
         else
         {
-            messsagePanel.SetPhoto(photoOther);
+            messsagePanel.SetPhoto(data.photoOther);
             messsagePanel.ChangeLayoutToLeft();
         }
 
-        scrollBar.value -= 1;
-
-        messsagePanel.SetText(messages[indexMessage].value);
+        messsagePanel.SetText(data.messages[indexMessage].value);
         indexMessage++;
     }
 }

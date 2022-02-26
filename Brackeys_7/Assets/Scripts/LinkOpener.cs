@@ -6,6 +6,12 @@ using UnityEngine.EventSystems;
 
 public class LinkOpener : MonoBehaviour, IPointerClickHandler
 {
+    int nextIndexTab;
+
+    private void Start()
+    {
+        nextIndexTab = ChatManager.Instance.GetNextIndexTab();
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -13,8 +19,7 @@ public class LinkOpener : MonoBehaviour, IPointerClickHandler
         int linkIndex = TMP_TextUtilities.FindIntersectingLink(pTextMeshPro, eventData.position, null);  // If you are not in a Canvas using Screen Overlay, put your camera instead of null
         if (linkIndex != -1)
         { // was a link clicked?
-            Debug.Log("Oi");
-  
+            TabsManager.Instance.SelectTab(nextIndexTab);
         }
     }
 }

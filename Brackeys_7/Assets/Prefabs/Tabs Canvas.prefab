@@ -575,12 +575,16 @@ MonoBehaviour:
   - {fileID: 1899163228586526021}
   tabs:
   - tab: {fileID: 1899163227013426141}
+    button: {fileID: 1899163227013426140}
     indexPanel: 0
   - tab: {fileID: 1899163227270343772}
+    button: {fileID: 1899163227270343775}
     indexPanel: 1
   - tab: {fileID: 1899163226864056740}
+    button: {fileID: 1899163226864056743}
     indexPanel: 2
   - tab: {fileID: 1899163226870835270}
+    button: {fileID: 1899163226870835289}
     indexPanel: 3
 --- !u!1 &1899163227013426138
 GameObject:

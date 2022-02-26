@@ -20,20 +20,30 @@ public class TabsManager : MonoBehaviour
     public struct DataTab 
     {
         public Transform tab;
+        public Button button;
         public int indexPanel;
 
-        public DataTab(Transform tab, int indexPanel)
+        public DataTab(Transform tab, Button button,int indexPanel)
         {
             this.tab = tab;
+            this.button = button;
             this.indexPanel = indexPanel;
         }
     }
+
+    public static TabsManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
         int index = 0;
         foreach (DataTab data in tabs)
         {
-            data.tab.GetComponent<Button>().onClick.AddListener(delegate { SelectTab(data.indexPanel); } );
+            data.button.onClick.AddListener(delegate { SelectTab(data.indexPanel); } );
             index++;
         }
     }
@@ -59,11 +69,11 @@ public class TabsManager : MonoBehaviour
         int index = 0;
         foreach (Transform tab in allTabs)
         {
-            tabs.Add(new DataTab(tab, index));
+            tabs.Add(new DataTab(tab, tab.GetComponent<Button>(), index));
             index++; 
         }
 
-
+        UnityEditor.EditorUtility.SetDirty(this);
     }
 #endif
 
@@ -74,6 +84,7 @@ public class TabsManager : MonoBehaviour
             panel.gameObject.SetActive(false);
         }
 
+        tabs[index].button.Select();
         panels[index].gameObject.SetActive(true);
     }
 
