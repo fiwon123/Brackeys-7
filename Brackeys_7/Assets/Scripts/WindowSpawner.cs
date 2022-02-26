@@ -62,19 +62,38 @@ public class WindowSpawner : MonoBehaviour
 
     public void StartSpawn()
     {
-        ConfigureRect();
         ClearWindows();
 
-        for (int i = 0; i < levelData.initialCountWindows; i++)
+        ConfigureRect();
+
+        rangeSpawnX.Min = 100f;
+        rangeSpawnX.Max = screenWidth - 100f;
+        rangeSpawnY.Min = 100f;
+        rangeSpawnY.Max = screenHeight - 100f;
+
+        Vector2 sizeSuccessButton = Vector2.zero;
+        sizeSuccessButton.x = ((RectTransform)successButton.transform).rect.width;
+        sizeSuccessButton.y = ((RectTransform)successButton.transform).rect.height;
+        successButton.transform.localPosition = GeneratePos(ref sizeSuccessButton);
+
+        rangeSpawnX.Min = Mathf.Clamp(successButton.transform.position.x - 150f, 0f, screenWidth);
+        rangeSpawnX.Max = Mathf.Clamp(successButton.transform.position.x + 150f, 0f, screenWidth);
+
+        rangeSpawnY.Min = Mathf.Clamp(successButton.transform.position.y - 150f, 0f, screenHeight);
+        rangeSpawnY.Max = Mathf.Clamp(successButton.transform.position.y + 150f, 0f, screenHeight);
+        
+
+        for (int i = 0; i < 8; i++)
         {
             SpawnWindow();
         }
 
-        successButton.position = transform.GetChild(0).position;
-        Vector2 newPosSuccessButton = successButton.localPosition;
-        newPosSuccessButton.x += 50f;
-        newPosSuccessButton.y += 50f;
-        successButton.localPosition = newPosSuccessButton;
+        ConfigureRect();
+
+        for (int i = 0; i < levelData.initialCountWindows-8; i++)
+        {
+            SpawnWindow();
+        }
 
         StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
         StartCoroutine(CountDownCoroutine(levelData.timeFinish));
@@ -163,9 +182,10 @@ public class WindowSpawner : MonoBehaviour
     private Vector3 GeneratePos(ref Vector2 newSize)
     {
         Vector2 newPos = Vector2.zero;
-        newPos.x = Random.Range(rangeSpawnX.Min, rangeSpawnX.Max);
 
-        newPos.y = Random.Range(rangeSpawnY.Min, rangeSpawnY.Max);
+        newPos.x = Random.Range(rangeSpawnX.Min, rangeSpawnX.Max - newSize.x);
+        newPos.y = Random.Range(rangeSpawnY.Min, rangeSpawnY.Max - newSize.y);
+
         if (isOffScreen(ref newPos, ref newSize, out float offsetX, out float offsetY))
         {
             newPos.x -= offsetX;

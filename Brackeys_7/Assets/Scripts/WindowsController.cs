@@ -40,13 +40,9 @@ public class WindowsController : MonoBehaviour
         RectTransform rt = (RectTransform)windowsAdd.transform;
         float width = rt.rect.width;
         float height = rt.rect.height;
-
-        Debug.Log("essa é a altura: " + height + "\nEssa é a largura: " + width);
         
         closeButton.GetComponent<Transform>().localPosition = new Vector2 (Random.Range(10, (rt.rect.width-10)), Random.Range(10, (rt.rect.height-10)));
-        Debug.Log("tamanho atual é :" + closeButton.GetComponent<Transform>().position);
 
-        //windowsAdd.GetComponentInChildren<Button>.anchoredPosition;
     }
 
     public void SetClosePositionInRightCorner()
@@ -55,16 +51,12 @@ public class WindowsController : MonoBehaviour
         float width = rt.rect.width;
         float height = rt.rect.height;
 
-        Debug.Log("essa é a altura: " + height + "\nEssa é a largura: " + width);
 
         closeButton.GetComponent<Transform>().localPosition = new Vector2(rt.rect.width - 10, rt.rect.height - 10);
-        Debug.Log("tamanho atual é :" + closeButton.GetComponent<Transform>().position);
 
-        //windowsAdd.GetComponentInChildren<Button>.anchoredPosition;
     }
 
     public void ClickRight(){
-        //Debug.Log("Sprite Clicked");
         Destroy(windowsAdd);
     }
 }
