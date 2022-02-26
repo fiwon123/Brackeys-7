@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/LevelData")]
-public class LevelData : MonoBehaviour
+public class LevelData : ScriptableObject
 {
     public int level;
     public bool isCloseRandom;

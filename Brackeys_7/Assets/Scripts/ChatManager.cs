@@ -29,6 +29,11 @@ public class ChatManager : MonoBehaviour
 
     public static ChatManager Instance;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void OnEnable()
     {
         if (coroutineStartChat == null)
@@ -74,6 +79,11 @@ public class ChatManager : MonoBehaviour
     {
         this.data = data;
         indexMessage = 0;
+    }
+
+    private void OnDisable()
+    {
+        coroutineStartChat = null;
     }
 
     [ButtonMethod]

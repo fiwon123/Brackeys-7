@@ -22,6 +22,7 @@ public class LinkOpener : MonoBehaviour, IPointerClickHandler
         { // was a link clicked?
             isOpened = true;
             TabsManager.Instance.SelectTab((int) TabsManager.state.PUZZLE);
+            GameManager.Instance.StartPuzzle();
         }
     }
 }

@@ -22,20 +22,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < currentLevel; i++)
+        for (int i = 1; i < currentLevel; i++)
         {
             allMessageDatas.RemoveAt(0);
             allLevelDatas.RemoveAt(0);
         }
 
         ChatManager.Instance.SetData(allMessageDatas[0]);
-        WindowSpawner.Instance.SetLevelData(allLevelDatas[0]);
     }
 
     public void StartPuzzle()
     {
         isPuzzleStarted = true;
 
+        WindowSpawner.Instance.SetLevelData(allLevelDatas[0]);
         WindowSpawner.Instance.StartSpawn();
     }
 
@@ -47,8 +47,10 @@ public class GameManager : MonoBehaviour
 
     public void WinPuzzle()
     {
-        allMessageDatas.RemoveAt(0);
-        allLevelDatas.RemoveAt(0);
+        if (allMessageDatas.Count > 0)
+            allMessageDatas.RemoveAt(0);
+        if (allLevelDatas.Count > 0)
+            allLevelDatas.RemoveAt(0);
 
         isPuzzleStarted = false;
 

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class InfoManager : MonoBehaviour
 {
+    [SerializeField]
     TextMeshProUGUI[] infos;
 
     public static InfoManager Instance;

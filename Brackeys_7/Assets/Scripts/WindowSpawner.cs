@@ -11,10 +11,6 @@ public class WindowSpawner : MonoBehaviour
     private GameObject windowPrefab = default;
     [SerializeField]
     private Transform canvas = default;
-    [SerializeField]
-    private int screenWidth = 1280;
-    [SerializeField]
-    private int screenHeight = 720;
 
     [Foldout("Data Windows", true)]
     [SerializeField]
@@ -22,13 +18,42 @@ public class WindowSpawner : MonoBehaviour
     [SerializeField]
     private LevelData levelData = default;
 
-    [Foldout("Spawn Position Limit", true)]
-    [SerializeField]
+
+    private float screenWidth = default;
+    private float screenHeight = default;
     private RangedFloat rangeSpawnX = default;
-    [SerializeField]
     private RangedFloat rangeSpawnY = default;
 
+    public Transform successButton;
+
     public static WindowSpawner Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        ConfigureRect();
+        
+    }
+
+    private void ConfigureRect()
+    {
+        RectTransform rt = (RectTransform)this.transform;
+        float width = rt.rect.width;
+        float height = rt.rect.height;
+
+        screenWidth = width;
+        screenHeight = height;
+
+        rangeSpawnX.Min = 0;
+        rangeSpawnX.Max = width;
+
+        rangeSpawnY.Min = 0f;
+        rangeSpawnY.Max = height;
+    }
 
     public void SetLevelData(LevelData value)
     {
@@ -37,12 +62,19 @@ public class WindowSpawner : MonoBehaviour
 
     public void StartSpawn()
     {
+        ConfigureRect();
         ClearWindows();
 
         for (int i = 0; i < levelData.initialCountWindows; i++)
         {
             SpawnWindow();
         }
+
+        successButton.position = transform.GetChild(0).position;
+        Vector2 newPosSuccessButton = successButton.localPosition;
+        newPosSuccessButton.x += 50f;
+        newPosSuccessButton.y += 50f;
+        successButton.localPosition = newPosSuccessButton;
 
         StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
         StartCoroutine(CountDownCoroutine(levelData.timeFinish));
@@ -95,7 +127,7 @@ public class WindowSpawner : MonoBehaviour
         SetNewSize(ref newWindow, ref dataRnd.size);
 
         // Generate Pos
-        newWindow.transform.position = GeneratePos(ref dataRnd.size);
+        newWindow.transform.localPosition = GeneratePos(ref dataRnd.size);
         
     }
 
