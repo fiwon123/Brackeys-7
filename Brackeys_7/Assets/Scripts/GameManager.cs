@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    int currentLevel = 1;
+    public int currentLevel = 1;
 
     [SerializeField]
     List<MessageData> allMessageDatas;
@@ -25,8 +24,12 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < currentLevel; i++)
         {
-            WinPuzzle();
+            allMessageDatas.RemoveAt(0);
+            allLevelDatas.RemoveAt(0);
         }
+
+        ChatManager.Instance.SetData(allMessageDatas[0]);
+        WindowSpawner.Instance.SetLevelData(allLevelDatas[0]);
     }
 
     public void StartPuzzle()
@@ -55,6 +58,8 @@ public class GameManager : MonoBehaviour
         {
             ChatManager.Instance.SetData(allMessageDatas[0]);
             WindowSpawner.Instance.SetLevelData(allLevelDatas[0]);
+
+            currentLevel++;
         }
 
     }

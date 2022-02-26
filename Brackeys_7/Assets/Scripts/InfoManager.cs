@@ -1,18 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InfoManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    TextMeshProUGUI[] infos;
+
+    public static InfoManager Instance;
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        DisableAllInfos();
+    }
+
+    private void DisableAllInfos()
+    {
+        for (int i = 0; i < infos.Length; i++)
+        {
+            infos[i].enabled = false;
+        }
+    }
+
+    public void EnableInfo(int index)
+    {
+        infos[index].enabled = true;
     }
 }

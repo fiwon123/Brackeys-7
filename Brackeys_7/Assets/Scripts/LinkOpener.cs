@@ -21,7 +21,7 @@ public class LinkOpener : MonoBehaviour, IPointerClickHandler
         if (linkIndex != -1 && !isOpened)
         { // was a link clicked?
             isOpened = true;
-            TabsManager.Instance.SelectTab(nextIndexTab);
+            TabsManager.Instance.SelectTab((int) TabsManager.state.PUZZLE);
         }
     }
 }

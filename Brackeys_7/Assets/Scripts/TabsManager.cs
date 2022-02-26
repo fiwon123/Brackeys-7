@@ -16,6 +16,8 @@ public class TabsManager : MonoBehaviour
     [SerializeField]
     private List<DataTab> tabs;
 
+    public enum state { CHAT = 0, PUZZLE = 1, INFO = 2, CREDITS = 3}
+
     [System.Serializable]
     public struct DataTab 
     {
