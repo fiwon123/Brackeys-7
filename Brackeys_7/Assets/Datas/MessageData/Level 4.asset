@@ -12,11 +12,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee921880d7670f64f9632164ab5e1078, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: 
-  photoYou: {fileID: 0}
+  photoYou: {fileID: 21300000, guid: 6194546eb72bc1849accc2a5b76c73d3, type: 3}
   photoOther: {fileID: 21300000, guid: 1ac673c028b3fbc4eb3bdf6fb8bd23e7, type: 3}
   messages:
   - talking: 1
     attachment: {fileID: 0}
-    value: Quarto puzzle <color="yellow"><link="ID"> Link </link>
+    value: 'You''re doing great!
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'I won''t make the last one that easy!
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'My gamer side helps a lot in moments like this lol
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "I can see! I never underestimate my players\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: I find it interesting to see how far they can go
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Changing the subject a bit...
+  - talking: 1
+    attachment: {fileID: 0}
+    value: I was thinking of moving to another city
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "Really? I find the changes something so exciting!\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'Where do you want to go?
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: I intend to go to the White Cape region.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'It looks pretty cool :)
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: ' Wow, I''m having this information first hand!
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "I give in easily, I shouldn't.\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Relax! Hope you enjoy White Cape!
+  - talking: 0
+    attachment: {fileID: 0}
+    value: I've heard good things about it.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Oh, I will for sure!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'I lived there for a while, actually!
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "And I can tell you that the place is wonderful.\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "You should go there someday.\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: ' I''ll try. I need to get out of the house a little more.
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'Great, so you''re invited!
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Thank you very much!
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'Can I consider us friends already?
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'I think this is the beginning of a good friendship.
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'You seem like a good person!
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Here is the final link.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: <align="center"><size=150%><color="yellow"><link="ID"> CLICK HERE! </link>
   nextIndexTab: 1
   level: 2

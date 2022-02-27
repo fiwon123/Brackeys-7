@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee921880d7670f64f9632164ab5e1078, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  photoYou: {fileID: 0}
+  photoYou: {fileID: 21300000, guid: 6194546eb72bc1849accc2a5b76c73d3, type: 3}
   photoOther: {fileID: 21300000, guid: 1ac673c028b3fbc4eb3bdf6fb8bd23e7, type: 3}
   messages:
   - talking: 0
     attachment: {fileID: 0}
-    value: Hey, it was quite challenging to find the link
+    value: Look, it was quite challenging to find the link!
   - talking: 0
     attachment: {fileID: 0}
     value: I didn't know I'd be under so much pop ups!

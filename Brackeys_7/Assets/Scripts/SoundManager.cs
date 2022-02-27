@@ -10,7 +10,8 @@ public enum SoundEffect
     Click,
     Message,
     PopUp,
-    Success
+    Success,
+    Final
 };
 
 public class SoundManager : MonoBehaviour
@@ -28,6 +29,9 @@ public class SoundManager : MonoBehaviour
     private AudioClip[] popUp;
     [SerializeField]
     private AudioClip[] success;
+    [SerializeField]
+    private AudioClip[] final;
+
     public static SoundManager Instance;
 
     private SoundEffect _soundEffect;
@@ -67,6 +71,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case SoundEffect.Success:
                 currentAudioClip = success;
+                break;
+            case SoundEffect.Final:
+                currentAudioClip = final;
                 break;
         }
 

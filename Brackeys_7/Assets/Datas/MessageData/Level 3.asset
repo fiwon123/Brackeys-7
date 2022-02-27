@@ -12,11 +12,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee921880d7670f64f9632164ab5e1078, type: 3}
   m_Name: Level 3
   m_EditorClassIdentifier: 
-  photoYou: {fileID: 0}
+  photoYou: {fileID: 21300000, guid: 6194546eb72bc1849accc2a5b76c73d3, type: 3}
   photoOther: {fileID: 21300000, guid: 1ac673c028b3fbc4eb3bdf6fb8bd23e7, type: 3}
   messages:
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Wow, I'm really enjoying it and it's a lot of fun :D
   - talking: 1
     attachment: {fileID: 0}
-    value: Terceiro  puzzle <color="yellow"><link="ID"> Link </link>
+    value: Glad you're enjoying it, you're doing well!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "Tell me, what do you do in your free time?\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'I really enjoy playing games and reading your articles.
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'I always read something before bed.
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Sometimes I read a cookbook when I'm bored.
+  - talking: 0
+    attachment: {fileID: 0}
+    value: It's nice to be able to cook something yummy for my family.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: I was wanting to learn to cook too!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: But life took me to the gaming path.
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "Why don't you go back and follow your dream?\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'I don''t know, I think I lack motivation.
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "I don't have someone to make something for, too.\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'You have your family.
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: By the way, I don't get along very well with them.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Little do they know that I have a blog.
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "How sad is that\u2026"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: But you seem to be coping well, your blog is doing great!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'Yeah, I''m glad for that.
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'But the life of a content creator is not as easy as it may seem.
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "I have no idea how it could be\r...\n"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: But I imagine it's pretty rushed!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: It's true, I have very little time to do my thing
+  - talking: 1
+    attachment: {fileID: 0}
+    value: I don't even have time to meet other people
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'Well, thank you for taking your time with me!
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: You're welcome, let's continue the challenge!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Okay, let's go.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: <align="center"><size=150%><color="yellow"><link="ID"> CLICK HERE! </link>
   nextIndexTab: 1
   level: 2

@@ -81,7 +81,7 @@ public class TabsManager : MonoBehaviour
 
     public void SelectTab(int index)
     {
-        if (GameManager.Instance.isPuzzleStarted || !GameManager.Instance.gameStarted) 
+        if (GameManager.Instance.isPuzzleStarted || !GameManager.Instance.gameStarted || GameManager.Instance.endGame)
         {
             return;
         }

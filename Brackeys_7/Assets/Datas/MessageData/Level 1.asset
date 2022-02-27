@@ -17,7 +17,7 @@ MonoBehaviour:
   messages:
   - talking: 1
     attachment: {fileID: 0}
-    value: Hello! Congratulations on participating in my first giveaway!
+    value: "Hello!! Congratulations on participating in my first giveaway!\r"
   - talking: 1
     attachment: {fileID: 0}
     value: "The winners will participate in a fan meeting!\r"
@@ -112,6 +112,6 @@ MonoBehaviour:
     value: "Here is the first link.\r"
   - talking: 1
     attachment: {fileID: 0}
-    value: <size=150%><color="yellow"><link="ID"> Link </link>
+    value: <size=150%><color="yellow"><link="ID"> CLICK HERE! </link>
   nextIndexTab: 1
   level: 1

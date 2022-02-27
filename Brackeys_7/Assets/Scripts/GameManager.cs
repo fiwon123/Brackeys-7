@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
 
+    public bool endGame;
+
+    public GameObject finalText;
+
     private void Awake()
     {
         Instance = this;
@@ -98,7 +102,9 @@ public class GameManager : MonoBehaviour
     IEnumerator FinalRoutine()
     {
         currentLevel++;
-        yield return new WaitForSeconds(2f);
+        endGame = true;
+        finalText.SetActive(true);
+        yield return new WaitForSeconds(5f);
         finalImage.SetActive(true);
     }
 
