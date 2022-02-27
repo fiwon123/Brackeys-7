@@ -12,5 +12,4 @@ public class SpawnData : ScriptableObject
     public sizes currentSize;
     public Vector2 size;
     public Sprite[] backgroundGenerator;
-
 }

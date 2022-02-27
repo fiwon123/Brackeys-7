@@ -107,7 +107,7 @@ public class WindowSpawner : MonoBehaviour
             SpawnWindow();
         }
 
-        SoundManager.Instance.PlaySoundEffect(SoundEffect.PopUp);
+
 
         StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
         StartCoroutine(CountDownCoroutine(levelData.timeFinish));
@@ -148,6 +148,7 @@ public class WindowSpawner : MonoBehaviour
     [ButtonMethod]
     public void SpawnWindow()
     {
+        SoundManager.Instance.PlaySoundEffect(SoundEffect.PopUp);
         // Instantiate new Window
         GameObject newWindow = Instantiate(windowPrefab, Vector2.zero, Quaternion.identity, canvas);
 
