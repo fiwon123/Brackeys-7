@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     List<LevelData> allLevelDatas;
 
     public bool isPuzzleStarted;
+    public bool gameStarted = false;
 
     public GameObject finalImage;
 
@@ -21,6 +22,11 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void StartGame()
+    {
+        gameStarted = true;
     }
 
     private void Start()

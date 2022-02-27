@@ -44,6 +44,16 @@ public class ChatManager : MonoBehaviour
 
     private IEnumerator StartChatCoroutine()
     {
+        while (!GameManager.Instance)
+        {
+            yield return null;
+        }
+
+        while (!GameManager.Instance.gameStarted)
+        {
+            yield return null;
+        }
+
         while (indexMessage <= data.messages.Length) {
             yield return new WaitForSeconds(intervalMessage);
             NextMessage();
