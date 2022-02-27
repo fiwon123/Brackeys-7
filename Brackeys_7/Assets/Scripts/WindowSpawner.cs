@@ -88,21 +88,11 @@ public class WindowSpawner : MonoBehaviour
         sizeSuccessButton.y = ((RectTransform)successButton.transform).rect.height;
         successButton.transform.localPosition = GeneratePos(ref sizeSuccessButton);
 
-        rangeSpawnX.Min = Mathf.Clamp(successButton.transform.position.x - 150f, 0f, screenWidth);
-        rangeSpawnX.Max = Mathf.Clamp(successButton.transform.position.x + 150f, 0f, screenWidth);
-
-        rangeSpawnY.Min = Mathf.Clamp(successButton.transform.position.y - 150f, 0f, screenHeight);
-        rangeSpawnY.Max = Mathf.Clamp(successButton.transform.position.y + 150f, 0f, screenHeight);
-        
-
-        for (int i = 0; i < 8; i++)
-        {
-            SpawnWindow();
-        }
-
         ConfigureRect();
 
-        for (int i = 0; i < levelData.initialCountWindows-8; i++)
+        SpawnWindow(true);
+
+        for (int i = 0; i < levelData.initialCountWindows; i++)
         {
             SpawnWindow();
         }
@@ -141,12 +131,13 @@ public class WindowSpawner : MonoBehaviour
     {
         foreach (Transform child in canvas)
         {
-            Destroy(child.gameObject);
+            if (!child.GetComponent<ButtonSuccess>())
+                Destroy(child.gameObject);
         }
     }
 
     [ButtonMethod]
-    public void SpawnWindow()
+    public void SpawnWindow(bool inSuccessButton = false)
     {
         SoundManager.Instance.PlaySoundEffect(SoundEffect.PopUp);
         // Instantiate new Window
@@ -171,8 +162,9 @@ public class WindowSpawner : MonoBehaviour
             newWindow.GetComponent<WindowsController>().SetClosePositionInRightCorner();
         }
 
-        // Generate Pos
-        newWindow.transform.localPosition = GeneratePos(ref dataRnd.size);
+
+        newWindow.transform.localPosition = GeneratePos(ref dataRnd.size, inSuccessButton);
+
         
     }
 
@@ -196,12 +188,20 @@ public class WindowSpawner : MonoBehaviour
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, newSize.y);
     }
 
-    private Vector3 GeneratePos(ref Vector2 newSize)
+    private Vector3 GeneratePos(ref Vector2 newSize, bool inSuccessButton = false)
     {
         Vector2 newPos = Vector2.zero;
 
-        newPos.x = Random.Range(rangeSpawnX.Min, rangeSpawnX.Max - newSize.x);
-        newPos.y = Random.Range(rangeSpawnY.Min, rangeSpawnY.Max - newSize.y);
+        if (!inSuccessButton)
+        {
+            newPos.x = Random.Range(rangeSpawnX.Min, rangeSpawnX.Max - newSize.x);
+            newPos.y = Random.Range(rangeSpawnY.Min, rangeSpawnY.Max - newSize.y);
+        }
+        else
+        {
+            newPos.x = successButton.localPosition.x - 20f;
+            newPos.y = successButton.localPosition.y - 20f;
+        }
 
         if (isOffScreen(ref newPos, ref newSize, out float offsetX, out float offsetY))
         {
