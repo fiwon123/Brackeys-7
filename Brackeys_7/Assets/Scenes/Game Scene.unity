@@ -4901,7 +4901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You won the giveway!
+  m_text: You won the giveaway!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24cc2c6653e8c4d4b991cfee35fca8be, type: 2}
   m_sharedMaterial: {fileID: 1217997218355112036, guid: 24cc2c6653e8c4d4b991cfee35fca8be, type: 2}
