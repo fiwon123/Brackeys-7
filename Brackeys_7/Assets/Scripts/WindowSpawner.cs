@@ -1,6 +1,7 @@
 using MyBox;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,9 @@ public class WindowSpawner : MonoBehaviour
 
     public Transform successButton;
 
+    public TextMeshProUGUI textTime;
+    public float currentTime;
+
     public static WindowSpawner Instance;
 
     private void Awake()
@@ -37,6 +41,13 @@ public class WindowSpawner : MonoBehaviour
     {
         ConfigureRect();
         
+    }
+
+    private void Update()
+    {
+        currentTime -= Time.deltaTime;
+        currentTime = Mathf.Clamp(currentTime, 0f, float.MaxValue);
+        textTime.text = "Time:" + currentTime.ToString("0");
     }
 
     private void ConfigureRect()
@@ -62,22 +73,43 @@ public class WindowSpawner : MonoBehaviour
 
     public void StartSpawn()
     {
-        ConfigureRect();
         ClearWindows();
 
-        for (int i = 0; i < levelData.initialCountWindows; i++)
+        ConfigureRect();
+
+        rangeSpawnX.Min = 100f;
+        rangeSpawnX.Max = screenWidth - 100f;
+        rangeSpawnY.Min = 100f;
+        rangeSpawnY.Max = screenHeight - 100f;
+
+        Vector2 sizeSuccessButton = Vector2.zero;
+        sizeSuccessButton.x = ((RectTransform)successButton.transform).rect.width;
+        sizeSuccessButton.y = ((RectTransform)successButton.transform).rect.height;
+        successButton.transform.localPosition = GeneratePos(ref sizeSuccessButton);
+
+        rangeSpawnX.Min = Mathf.Clamp(successButton.transform.position.x - 150f, 0f, screenWidth);
+        rangeSpawnX.Max = Mathf.Clamp(successButton.transform.position.x + 150f, 0f, screenWidth);
+
+        rangeSpawnY.Min = Mathf.Clamp(successButton.transform.position.y - 150f, 0f, screenHeight);
+        rangeSpawnY.Max = Mathf.Clamp(successButton.transform.position.y + 150f, 0f, screenHeight);
+        
+
+        for (int i = 0; i < 8; i++)
         {
             SpawnWindow();
         }
 
-        successButton.position = transform.GetChild(0).position;
-        Vector2 newPosSuccessButton = successButton.localPosition;
-        newPosSuccessButton.x += 50f;
-        newPosSuccessButton.y += 50f;
-        successButton.localPosition = newPosSuccessButton;
+        ConfigureRect();
+
+        for (int i = 0; i < levelData.initialCountWindows-8; i++)
+        {
+            SpawnWindow();
+        }
 
         StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
         StartCoroutine(CountDownCoroutine(levelData.timeFinish));
+
+        currentTime = levelData.timeFinish;
     }
 
     public void FinishSpawn()
@@ -126,6 +158,15 @@ public class WindowSpawner : MonoBehaviour
         // Generate new Size;
         SetNewSize(ref newWindow, ref dataRnd.size);
 
+        if (levelData.randomizeCloseButton)
+        {
+            newWindow.GetComponent<WindowsController>().RandomizePlace();
+        }
+        else
+        {
+            newWindow.GetComponent<WindowsController>().SetClosePositionInRightCorner();
+        }
+
         // Generate Pos
         newWindow.transform.localPosition = GeneratePos(ref dataRnd.size);
         
@@ -154,9 +195,10 @@ public class WindowSpawner : MonoBehaviour
     private Vector3 GeneratePos(ref Vector2 newSize)
     {
         Vector2 newPos = Vector2.zero;
-        newPos.x = Random.Range(rangeSpawnX.Min, rangeSpawnX.Max);
 
-        newPos.y = Random.Range(rangeSpawnY.Min, rangeSpawnY.Max);
+        newPos.x = Random.Range(rangeSpawnX.Min, rangeSpawnX.Max - newSize.x);
+        newPos.y = Random.Range(rangeSpawnY.Min, rangeSpawnY.Max - newSize.y);
+
         if (isOffScreen(ref newPos, ref newSize, out float offsetX, out float offsetY))
         {
             newPos.x -= offsetX;

@@ -7,7 +7,7 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public int level;
-    public bool isCloseRandom;
+    public bool randomizeCloseButton;
     public int initialCountWindows;
     public RangedFloat timeSpawn;
     public float timeFinish;

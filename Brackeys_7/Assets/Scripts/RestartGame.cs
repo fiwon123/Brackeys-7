@@ -5,6 +5,7 @@ using UnityEngine;
 public class RestartGame : MonoBehaviour
 {
     public void OnMouseDown(){
+        //Debug.Log("Sprite Clicked");
         GameManager.Instance.RestartPuzzle();
     }
 }

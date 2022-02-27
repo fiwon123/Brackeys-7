@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public bool isPuzzleStarted;
 
+    public GameObject finalTab;
+
     public static GameManager Instance;
 
     private void Awake()
@@ -41,6 +43,11 @@ public class GameManager : MonoBehaviour
 
     public void RestartPuzzle()
     {
+        if (!WindowSpawner.Instance)
+        {
+            return;
+        }
+
         WindowSpawner.Instance.FinishSpawn();
         StartPuzzle();
     }
@@ -63,12 +70,17 @@ public class GameManager : MonoBehaviour
 
             currentLevel++;
         }
+        else
+        {
+            finalTab.SetActive(true);
+        }
 
     }
 
     public void LosePuzzle()
     {
         isPuzzleStarted = false;
+        RestartPuzzle();
     }
 
 }
