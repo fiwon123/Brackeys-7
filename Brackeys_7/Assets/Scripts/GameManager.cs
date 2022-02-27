@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour
 
     public void RestartPuzzle()
     {
+        if (!WindowSpawner.Instance)
+        {
+            return;
+        }
+
         WindowSpawner.Instance.FinishSpawn();
         StartPuzzle();
     }
