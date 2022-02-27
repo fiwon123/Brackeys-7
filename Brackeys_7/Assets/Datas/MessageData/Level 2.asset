@@ -15,8 +15,75 @@ MonoBehaviour:
   photoYou: {fileID: 0}
   photoOther: {fileID: 21300000, guid: 1ac673c028b3fbc4eb3bdf6fb8bd23e7, type: 3}
   messages:
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Hey, it was quite challenging to find the link
+  - talking: 0
+    attachment: {fileID: 0}
+    value: I didn't know I'd be under so much pop ups!
   - talking: 1
     attachment: {fileID: 0}
-    value: Segundo puzzle <color="yellow"><link="ID"> Link </link>
+    value: Did you really like it?
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "My friends often scoff at this idea :/\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'Wow, they don''t know what they''re saying!
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: True! But nice that you liked it.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "Tell me something, have you ever developed a game?\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'No, but I would like to! '
+  - talking: 0
+    attachment: {fileID: 0}
+    value: I've always liked to play, actually.
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "Super Mario Bros 3 is my favorite game.\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: There's a game I've never played.
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "True, you never commented that on the blog\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'Yeah, I''m a little ashamed of it to be honest.
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Oh.. that's all right.
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Is there anything else you've never commented on the blog?
+  - talking: 1
+    attachment: {fileID: 0}
+    value: ' Ah, Mortal Kombat, I always trained to do the brutality moves!!!'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Really? Ah, one of my favorites!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "Yeah, nice to be able to find a fan from MK\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "On our meeting we could play together\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Back to the game!
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Let's go!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: <align="center"><size=150%><color="yellow"><link="ID"> CLICK HERE! </link>
   nextIndexTab: 1
   level: 2

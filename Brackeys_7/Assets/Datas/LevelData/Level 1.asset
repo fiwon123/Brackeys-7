@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   randomizeCloseButton: 0
-  initialCountWindows: 10
+  initialCountWindows: 3
   timeSpawn:
-    Min: 1.1
-    Max: 1.3
+    Min: 2
+    Max: 2.1
   timeFinish: 60

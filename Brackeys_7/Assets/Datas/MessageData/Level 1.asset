@@ -17,6 +17,101 @@ MonoBehaviour:
   messages:
   - talking: 1
     attachment: {fileID: 0}
-    value: Primeiro puzzle <color="yellow"><link="ID"> Link </link>
+    value: Hello! Congratulations on participating in my first giveaway!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "The winners will participate in a fan meeting!\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'We''ll celebrate the first 1000 subscribers of the Mendax Portal!
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Hi, Mendax! Nice to meet you!
+  - talking: 0
+    attachment: {fileID: 0}
+    value: I feel so lucky!
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "Well, could it be fate? \n"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: The links will take you to sites that will have fan meeting details
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'As you may know, I really like games
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "So I decided to make a little passtime here!\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: What do you mean?
+  - talking: 1
+    attachment: {fileID: 0}
+    value: I divided the encounter data into four parts
+  - talking: 1
+    attachment: {fileID: 0}
+    value: They are in the links that I will send you.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "To enter the puzzle, just click on the yellow text\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "The objective is to find the green button.\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: It will take you to a page with the date of the encounter
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "Okay, got it. Looks like fun!\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Yeah, I try to make things fun when I can
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "Cool!\r"
+  - talking: 0
+    attachment: {fileID: 0}
+    value: Hey, I want to ask you something
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'Go ahead.
+
+'
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "Is your name really Mendax?\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: 'No no, I prioritize my internet security a lot
+
+'
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Nowadays any of your data can be used for some harm
+  - talking: 1
+    attachment: {fileID: 0}
+    value: Unfortunately...
+  - talking: 0
+    attachment: {fileID: 0}
+    value: 'Got it. '
+  - talking: 0
+    attachment: {fileID: 0}
+    value: "So no one on the internet knows your name?\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "Some people do know.\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: But like I said, I try to keep my privacy private.
+  - talking: 1
+    attachment: {fileID: 0}
+    value: "Here is the first link.\r"
+  - talking: 1
+    attachment: {fileID: 0}
+    value: <size=150%><color="yellow"><link="ID"> Link </link>
   nextIndexTab: 1
   level: 1

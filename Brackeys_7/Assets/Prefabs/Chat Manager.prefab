@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 62deff0aae6531845b750b0b5406ba17, type: 2}
+  intervalMessage: 2.5
   scrollBar: {fileID: 672240958710525046}
   viewerPort: {fileID: 672240959948663889}
   panelMessagePrefab: {fileID: 475465532679153554, guid: 58379216d010ed045998db3a1fc27565, type: 3}
