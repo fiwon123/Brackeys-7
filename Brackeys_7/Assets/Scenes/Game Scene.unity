@@ -1817,7 +1817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 365.2556, y: 0}
+  m_AnchoredPosition: {x: 340.9981, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380088835
@@ -2883,7 +2883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 995.76685, y: 0}
+  m_AnchoredPosition: {x: 922.9943, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &858372960
@@ -4020,8 +4020,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.44272, y: -27.140202}
-  m_SizeDelta: {x: 222.8854, y: 54.2804}
+  m_AnchoredPosition: {x: 162.28696, y: -27.140202}
+  m_SizeDelta: {x: 324.5737, y: 54.2804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1368191246
 MonoBehaviour:
@@ -4069,7 +4069,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tulio
+  m_text: Andre D. Tuffo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 24cc2c6653e8c4d4b991cfee35fca8be, type: 2}
   m_sharedMaterial: {fileID: 1217997218355112036, guid: 24cc2c6653e8c4d4b991cfee35fca8be, type: 2}
@@ -5232,7 +5232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 680.5112, y: 0}
+  m_AnchoredPosition: {x: 631.9962, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913340168
@@ -5327,7 +5327,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 100
+  m_Spacing: 2.97
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
