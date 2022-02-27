@@ -115,7 +115,6 @@ public class WindowSpawner : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         GameManager.Instance.LosePuzzle();
-        FinishSpawn();
     }
 
     private IEnumerator SpawnWindowCoroutine(RangedFloat time)

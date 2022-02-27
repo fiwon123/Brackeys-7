@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
     IEnumerator FinalRoutine()
     {
         currentLevel++;
+        yield return new WaitForSeconds(1f);
         endGame = true;
         finalText.SetActive(true);
         yield return new WaitForSeconds(5f);
