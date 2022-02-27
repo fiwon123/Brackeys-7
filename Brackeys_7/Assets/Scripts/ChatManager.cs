@@ -119,6 +119,7 @@ public class ChatManager : MonoBehaviour
         }
 
         messsagePanel.SetText(data.messages[indexMessage].value);
+        SoundManager.Instance.PlaySoundEffect(SoundEffect.Message);
         indexMessage++;
     }
 }

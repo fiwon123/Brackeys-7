@@ -16,6 +16,7 @@ public class WindowSpawner : MonoBehaviour
     [Foldout("Data Windows", true)]
     [SerializeField]
     private SpawnData[] datas = default;
+
     [SerializeField]
     private LevelData levelData = default;
 
@@ -106,6 +107,8 @@ public class WindowSpawner : MonoBehaviour
             SpawnWindow();
         }
 
+        SoundManager.Instance.PlaySoundEffect(SoundEffect.PopUp);
+
         StartCoroutine(SpawnWindowCoroutine(levelData.timeSpawn));
         StartCoroutine(CountDownCoroutine(levelData.timeFinish));
 
@@ -160,7 +163,7 @@ public class WindowSpawner : MonoBehaviour
 
         if (levelData.randomizeCloseButton)
         {
-            newWindow.GetComponent<WindowsController>().RandomizePlace();
+            newWindow.GetComponent<WindowsController>().SetCloseButtonPosition();
         }
         else
         {

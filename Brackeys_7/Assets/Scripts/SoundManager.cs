@@ -8,24 +8,26 @@ using Random = UnityEngine.Random;
 public enum SoundEffect
 {
     Click,
-    Close,
+    Message,
     PopUp,
+    Success
 };
 
 public class SoundManager : MonoBehaviour
 {
     [Header("AudioSources")]
     [SerializeField]
-    private AudioSource sfxAudioSource;
+    private AudioSource audioSource;
 
     [Header("Sound Effects")]
     [SerializeField]
     private AudioClip[] click;
     [SerializeField]
-    private AudioClip[] close;
+    private AudioClip[] message;
     [SerializeField]
     private AudioClip[] popUp;
-
+    [SerializeField]
+    private AudioClip[] success;
     public static SoundManager Instance;
 
     private SoundEffect _soundEffect;
@@ -45,7 +47,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundEffect(SoundEffect soundEffect)
     {
-        sfxAudioSource.PlayOneShot(GetAudioClip(soundEffect), 0.1f);
+        audioSource.PlayOneShot(GetAudioClip(soundEffect), 0.1f);
     }
 
     private AudioClip GetAudioClip(SoundEffect soundEffect)
@@ -57,11 +59,14 @@ public class SoundManager : MonoBehaviour
             case SoundEffect.Click:
                 currentAudioClip = click;
                 break;
-            case SoundEffect.Close:
-                currentAudioClip = close;
+            case SoundEffect.Message:
+                currentAudioClip = message;
                 break;
             case SoundEffect.PopUp:
                 currentAudioClip = popUp;
+                break;
+            case SoundEffect.Success:
+                currentAudioClip = success;
                 break;
         }
 

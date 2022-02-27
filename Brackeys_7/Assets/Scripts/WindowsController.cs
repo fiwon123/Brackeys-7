@@ -20,11 +20,11 @@ public class WindowsController : MonoBehaviour
         RandomizeImage();
 
         if(needRandom){
-            RandomizePlace();
+            SetCloseButtonPosition();
         }
     }
 
-    public void SpawnNewPopup()
+    public void SpawnNewPopUp()
     {
         WindowSpawner.Instance.SpawnWindow();
     }
@@ -36,27 +36,22 @@ public class WindowsController : MonoBehaviour
     }
 
     
-    public void RandomizePlace(){
+    public void SetCloseButtonPosition(){
         RectTransform rt = (RectTransform)windowsAdd.transform;
-        float width = rt.rect.width;
-        float height = rt.rect.height;
-        
-        closeButton.GetComponent<Transform>().localPosition = new Vector2 (Random.Range(10, (rt.rect.width-10)), Random.Range(10, (rt.rect.height-10)));
-
+        var rect = rt.rect;
+        closeButton.GetComponent<Transform>().localPosition =
+            new Vector2 (Random.Range(10, (rect.width-10)), Random.Range(10, (rt.rect.height-10)));
     }
 
     public void SetClosePositionInRightCorner()
     {
         RectTransform rt = (RectTransform)windowsAdd.transform;
-        float width = rt.rect.width;
-        float height = rt.rect.height;
-
-
-        closeButton.GetComponent<Transform>().localPosition = new Vector2(rt.rect.width - 10, rt.rect.height - 10);
+        var rect = rt.rect;
+        closeButton.GetComponent<Transform>().localPosition = new Vector2(rect.width - 10, rect.height - 10);
 
     }
 
-    public void ClickRight(){
+    public void OnClickSuccess(){
         Destroy(windowsAdd);
     }
 }

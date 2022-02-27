@@ -92,10 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeImages:
-  - {fileID: 21300000, guid: ede7a150266518c4dbd0187cfa926350, type: 3}
-  - {fileID: 21300000, guid: 1bcb70d93137fb241b25927dc5528781, type: 3}
   - {fileID: 21300000, guid: ccd20cbd71c17c442bc1fd11918c7f7a, type: 3}
-  - {fileID: 21300000, guid: cdf72ab544d44b449b04e763825a0c0f, type: 3}
   needRandom: 0
   closeButton: {fileID: 3071437012722088865}
   windowsAdd: {fileID: 2476251733830849359}
@@ -222,7 +219,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 35837005248841221}
         m_TargetAssemblyTypeName: WindowsController, Assembly-CSharp
-        m_MethodName: ClickRight
+        m_MethodName: OnClickSuccess
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

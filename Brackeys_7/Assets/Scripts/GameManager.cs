@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public bool isPuzzleStarted;
 
-    public GameObject finalTab;
+    public GameObject finalImage;
 
     public static GameManager Instance;
 
@@ -52,8 +53,17 @@ public class GameManager : MonoBehaviour
         StartPuzzle();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SoundManager.Instance.PlaySoundEffect(SoundEffect.Click);
+        }
+    }
+
     public void WinPuzzle()
     {
+        SoundManager.Instance.PlaySoundEffect(SoundEffect.Success);
         if (allMessageDatas.Count > 0)
             allMessageDatas.RemoveAt(0);
         if (allLevelDatas.Count > 0)
@@ -72,9 +82,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            finalTab.SetActive(true);
+            //Gatilho de end game
+            Debug.Log("End Game");
+            StartCoroutine(FinalRoutine());
         }
 
+    }
+
+    IEnumerator FinalRoutine()
+    {
+        currentLevel++;
+        yield return new WaitForSeconds(2f);
+        finalImage.SetActive(true);
     }
 
     public void LosePuzzle()
